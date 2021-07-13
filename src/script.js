@@ -33,6 +33,10 @@ const geometry = new THREE.PlaneGeometry(1, 1, 32, 32)
 const material = new THREE.RawShaderMaterial({
   vertexShader,
   fragmentShader,
+  side: THREE.DoubleSide,
+  uniforms: {
+    uTime: { value: 0 },
+  },
 })
 
 // Mesh
@@ -97,6 +101,9 @@ const tick = () => {
 
   // Update controls
   controls.update()
+
+  // Update material
+  material.uniforms.uTime.value = elapsedTime
 
   // Render
   renderer.render(scene, camera)
