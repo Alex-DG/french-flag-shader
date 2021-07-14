@@ -6,6 +6,9 @@ uniform vec2 uFrequency;
 
 attribute vec3 position;
 attribute vec2 aRandom;
+attribute vec2 uv;
+
+varying vec2 vUv;
 
 void main()
 {
@@ -17,4 +20,6 @@ void main()
     vec4 projectedPosition = projectionMatrix * viewPosition;
 
     gl_Position = projectedPosition;
+
+    vUv = uv;
 }
