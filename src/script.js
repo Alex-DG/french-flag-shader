@@ -43,7 +43,19 @@ for (let i = 0; i < count; i++) {
 geometry.setAttribute('aRandom', new THREE.BufferAttribute(randoms, 1))
 
 // Material
-const material = new THREE.RawShaderMaterial({
+// const material = new THREE.RawShaderMaterial({
+//   vertexShader,
+//   fragmentShader,
+//   // transparent: true,
+//   side: THREE.DoubleSide,
+//   uniforms: {
+//     uTime: { value: 0 },
+//     uFrequency: { value: new THREE.Vector2(10, 2) },
+//     uColor: { value: new THREE.Color(debugOptions.color) },
+//     uTexture: { value: flagTexture },
+//   },
+// })
+const material = new THREE.ShaderMaterial({
   vertexShader,
   fragmentShader,
   // transparent: true,
