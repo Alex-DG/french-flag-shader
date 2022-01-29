@@ -81,9 +81,11 @@ gui
   .max(20)
   .step(0.001)
   .name('frequencyY')
-gui
-  .addColor(debugOptions, 'color')
-  .onChange(() => material.uniforms.uColor.value.set(debugOptions.color))
+// gui
+//   .addColor(debugOptions, 'color')
+//   .onChange(
+//     () => (material.uniforms.uColor.value = new THREE.Color(debugOptions.color))
+//   )
 
 // Mesh
 const mesh = new THREE.Mesh(geometry, material)
@@ -134,6 +136,7 @@ controls.enableDamping = true
  */
 const renderer = new THREE.WebGLRenderer({
   canvas: canvas,
+  alpha: true,
 })
 renderer.setSize(sizes.width, sizes.height)
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
